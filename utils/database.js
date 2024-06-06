@@ -12,7 +12,6 @@ export const connectToDB = async () => {
   try {
     mongoose.connect(process.env.MONGODB_URI, {
       dbName: "share_prompt",
-      useUnifiedTopology: true,
     })
 
     isConnected = true
