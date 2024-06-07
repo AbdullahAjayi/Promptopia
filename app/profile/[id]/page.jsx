@@ -23,14 +23,18 @@ const UserProfile = ({ params }) => {
   }, [params?.id])
 
   return (
-    <Suspense>
-      <Profile
-        name={userName}
-        data={userPosts}
-        desc={`Welcome to ${userName}'s profile profile page. Explore ${userName}'s exceptional prompts and be inspired by the power of their imagination`}
-      />
-    </Suspense>
+    <Profile
+      name={userName}
+      data={userPosts}
+      desc={`Welcome to ${userName}'s profile profile page. Explore ${userName}'s exceptional prompts and be inspired by the power of their imagination`}
+    />
   )
 }
 
-export default UserProfile
+const Page = () => (
+  <Suspense>
+    <UserProfile />
+  </Suspense>
+)
+
+export default Page
